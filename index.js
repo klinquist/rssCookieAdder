@@ -9,7 +9,7 @@ function replaceTitles(body, query) {
     return body.replace(/\<link\>(.*?)\<\/link\>/g, (n, x) => {
         i++;
         //Don't replace the first link
-        if (i > 1) return `<link>${host}/?data=${Buffer.from(`u=${x}&f=true&${query}`).toString('base64')}</link>`;
+        if (i > 1) return `<link>${host}/?data=${Buffer.from(`url=${x}&f=true&${query}`).toString('base64')}</link>`;
         else return `<link>${x}</link>`;
     });
 }
